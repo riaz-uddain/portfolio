@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SOJIB | Graphics & Motion Designer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --bg:      #080808;
-      --bg2:     #0f0f0f;
-      --bg3:     #161616;
-      --card:    #111111;
-      --accent:  #ff5c1a;
+      --bg: #080808;
+      --bg2: #0f0f0f;
+      --bg3: #161616;
+      --card: #111111;
+      --accent: #ff5c1a;
       --accent2: #ffb347;
-      --text:    #f0ece4;
-      --muted:   #6a6560;
-      --border:  #222222;
-      --radius:  10px;
+      --text: #f0ece4;
+      --muted: #6a6560;
+      --border: #222222;
+      --radius: 10px;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -46,7 +58,7 @@
 
     /* ─── NAVBAR ─── */
     nav.navbar {
-      background: rgba(8,8,8,.92);
+      background: rgba(8, 8, 8, .92);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
       padding: 16px 0;
@@ -54,12 +66,14 @@
       top: 0;
       z-index: 900;
     }
+
     .navbar-brand {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.9rem;
       letter-spacing: 3px;
       color: var(--accent) !important;
     }
+
     .nav-link {
       color: var(--muted) !important;
       font-size: .82rem;
@@ -69,7 +83,11 @@
       padding: 6px 16px !important;
       transition: color .2s;
     }
-    .nav-link:hover { color: var(--text) !important; }
+
+    .nav-link:hover {
+      color: var(--text) !important;
+    }
+
     .btn-hire {
       background: var(--accent);
       color: #fff;
@@ -82,20 +100,10 @@
       border: none;
       transition: background .2s;
     }
-    .btn-hire:hover { background: #e04a0c; color: #fff; }
-    .nav-photo {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      margin-left: 10px;
-      flex-shrink: 0;
-      transition: transform .2s, box-shadow .2s;
-    }
-    .nav-photo:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 0 3px rgba(255,92,26,.3);
+
+    .btn-hire:hover {
+      background: #e04a0c;
+      color: #fff;
     }
 
     /* ─── HERO ─── */
@@ -107,6 +115,7 @@
       overflow: hidden;
       background: var(--bg);
     }
+
     .hero-bg-text {
       position: absolute;
       top: 50%;
@@ -116,13 +125,18 @@
       font-size: clamp(120px, 22vw, 280px);
       letter-spacing: 10px;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(255,92,26,.06);
+      -webkit-text-stroke: 1px rgba(255, 92, 26, .06);
       white-space: nowrap;
       pointer-events: none;
       user-select: none;
       z-index: 0;
     }
-    .hero-content { position: relative; z-index: 1; }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero-photo-col {
       position: relative;
       z-index: 1;
@@ -130,31 +144,34 @@
       align-items: center;
       justify-content: center;
     }
+
     .hero-photo-ring {
       position: relative;
       width: clamp(280px, 38vw, 480px);
       height: clamp(280px, 38vw, 480px);
     }
-    /* spinning dashed ring */
+
     .hero-photo-ring::before {
       content: '';
       position: absolute;
       inset: -10px;
       border-radius: 50%;
-      border: 1.5px dashed rgba(255,92,26,.35);
+      border: 1.5px dashed rgba(255, 92, 26, .35);
       animation: spinRing 18s linear infinite;
     }
+
     @keyframes spinRing {
       to { transform: rotate(360deg); }
     }
-    /* solid accent ring */
+
     .hero-photo-ring::after {
       content: '';
       position: absolute;
       inset: -4px;
       border-radius: 50%;
-      border: 2px solid rgba(255,92,26,.18);
+      border: 2px solid rgba(255, 92, 26, .18);
     }
+
     .hero-photo-ring img {
       width: 100%;
       height: 100%;
@@ -165,7 +182,7 @@
       position: relative;
       z-index: 1;
     }
-    /* floating badge */
+
     .hero-photo-badge {
       position: absolute;
       bottom: 18px;
@@ -177,12 +194,14 @@
       z-index: 2;
       white-space: nowrap;
     }
+
     .hero-photo-badge .badge-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5rem;
       color: var(--accent);
       line-height: 1;
     }
+
     .hero-photo-badge .badge-label {
       font-size: .7rem;
       letter-spacing: 1.5px;
@@ -190,7 +209,7 @@
       color: var(--muted);
       margin-top: 2px;
     }
-    /* available dot badge */
+
     .hero-photo-avail {
       position: absolute;
       top: 20px;
@@ -209,22 +228,28 @@
       color: var(--text);
       z-index: 2;
     }
+
     .avail-dot {
-      width: 8px; height: 8px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: #4ade80;
       box-shadow: 0 0 6px #4ade80;
       animation: pulse 2s ease infinite;
       flex-shrink: 0;
     }
+
     @keyframes pulse {
-      0%,100% { opacity:1; }
-      50%      { opacity:.4; }
+      0%, 100% { opacity: 1; }
+      50% { opacity: .4; }
     }
+
     @media (max-width: 991px) {
       .hero-photo-col { margin-top: 40px; }
       .hero-photo-ring { width: 240px; height: 240px; }
     }
+
+    .hero-eyebrow {
       font-family: 'DM Mono', monospace;
       font-size: .72rem;
       letter-spacing: 4px;
@@ -235,6 +260,7 @@
       align-items: center;
       gap: 12px;
     }
+
     .hero-eyebrow::before {
       content: '';
       display: inline-block;
@@ -242,6 +268,7 @@
       height: 1px;
       background: var(--accent);
     }
+
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(4rem, 10vw, 9rem);
@@ -250,11 +277,16 @@
       color: var(--text);
       margin-bottom: 10px;
     }
+
     .hero-title .stroke {
       color: transparent;
       -webkit-text-stroke: 2px var(--text);
     }
-    .hero-title .accent-word { color: var(--accent); }
+
+    .hero-title .accent-word {
+      color: var(--accent);
+    }
+
     .hero-tagline {
       font-size: 1rem;
       color: var(--muted);
@@ -262,7 +294,13 @@
       margin: 24px 0 36px;
       line-height: 1.8;
     }
-    .hero-cta-group { display: flex; gap: 16px; flex-wrap: wrap; }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
     .btn-cta-primary {
       background: var(--accent);
       color: #fff;
@@ -279,7 +317,13 @@
       align-items: center;
       gap: 8px;
     }
-    .btn-cta-primary:hover { background: #e04a0c; color: #fff; transform: translateY(-2px); }
+
+    .btn-cta-primary:hover {
+      background: #e04a0c;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
     .btn-cta-ghost {
       background: transparent;
       color: var(--text);
@@ -296,7 +340,11 @@
       align-items: center;
       gap: 8px;
     }
-    .btn-cta-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .btn-cta-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
     .hero-stats {
       margin-top: 60px;
@@ -306,6 +354,7 @@
       gap: 48px;
       flex-wrap: wrap;
     }
+
     .hero-stat-num {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2.8rem;
@@ -313,6 +362,7 @@
       color: var(--accent);
       line-height: 1;
     }
+
     .hero-stat-label {
       font-size: .76rem;
       letter-spacing: 2px;
@@ -322,7 +372,12 @@
     }
 
     /* ─── SECTION COMMON ─── */
-    section { padding: 100px 0; position: relative; z-index: 1; }
+    section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
     .eyebrow {
       font-family: 'DM Mono', monospace;
       font-size: .7rem;
@@ -334,6 +389,7 @@
       align-items: center;
       gap: 12px;
     }
+
     .eyebrow::before {
       content: '';
       display: inline-block;
@@ -341,6 +397,7 @@
       height: 1px;
       background: var(--accent);
     }
+
     .section-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.4rem, 5vw, 4rem);
@@ -349,6 +406,7 @@
       line-height: 1;
       margin-bottom: 14px;
     }
+
     .section-desc {
       color: var(--muted);
       font-size: .9rem;
@@ -356,8 +414,11 @@
       line-height: 1.85;
     }
 
-    /* ─── SKILLS / ADVANTAGE ─── */
-    #advantage { background: var(--bg2); }
+    /* ─── SKILLS ─── */
+    #advantage {
+      background: var(--bg2);
+    }
+
     .skill-item {
       border-top: 1px solid var(--border);
       padding: 28px 0;
@@ -368,15 +429,23 @@
       transition: padding-left .25s;
       cursor: default;
     }
+
     .skill-item:hover { padding-left: 8px; }
     .skill-item:hover .skill-name { color: var(--accent); }
+
     .skill-name {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.6rem;
       letter-spacing: 2px;
       transition: color .25s;
     }
-    .skill-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+    .skill-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
     .skill-tag {
       font-size: .72rem;
       font-weight: 600;
@@ -387,11 +456,26 @@
       border-radius: 3px;
       padding: 4px 10px;
     }
-    .skill-bar-wrap { flex: 1; max-width: 180px; height: 2px; background: var(--border); border-radius: 2px; }
-    .skill-bar { height: 100%; background: var(--accent); border-radius: 2px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+
+    .skill-bar-wrap {
+      flex: 1;
+      max-width: 180px;
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+    }
+
+    .skill-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
+    }
 
     /* ─── MY WORKS ─── */
-    #myworks { background: var(--bg); }
+    #myworks {
+      background: var(--bg);
+    }
 
     .works-filter {
       display: flex;
@@ -399,6 +483,7 @@
       flex-wrap: wrap;
       margin-bottom: 40px;
     }
+
     .filter-btn {
       background: transparent;
       color: var(--muted);
@@ -412,6 +497,7 @@
       cursor: pointer;
       transition: all .2s;
     }
+
     .filter-btn.active,
     .filter-btn:hover {
       background: var(--accent);
@@ -424,6 +510,7 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 2px;
     }
+
     .video-card {
       position: relative;
       overflow: hidden;
@@ -431,19 +518,25 @@
       background: var(--card);
       aspect-ratio: 16/9;
     }
-    .video-card.portrait { aspect-ratio: 9/16; }
+
+    .video-card.portrait {
+      aspect-ratio: 9/16;
+    }
+
     .video-card img.thumb {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform .5s cubic-bezier(.4,0,.2,1), filter .4s;
+      transition: transform .5s cubic-bezier(.4, 0, .2, 1), filter .4s;
       filter: brightness(.85) saturate(.9);
     }
+
     .video-card:hover img.thumb {
       transform: scale(1.04);
       filter: brightness(1) saturate(1.1);
     }
+
     .card-overlay {
       position: absolute;
       inset: 0;
@@ -454,9 +547,11 @@
       padding: 22px 20px;
       transition: background .3s;
     }
+
     .video-card:hover .card-overlay {
       background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(255,92,26,.08) 100%);
     }
+
     .card-play {
       position: absolute;
       top: 50%;
@@ -464,7 +559,7 @@
       transform: translate(-50%, -50%) scale(.85);
       width: 56px;
       height: 56px;
-      background: rgba(255,92,26,.9);
+      background: rgba(255, 92, 26, .9);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -474,10 +569,12 @@
       opacity: 0;
       transition: opacity .25s, transform .25s;
     }
+
     .video-card:hover .card-play {
       opacity: 1;
       transform: translate(-50%, -50%) scale(1);
     }
+
     .card-meta {
       font-family: 'DM Mono', monospace;
       font-size: .66rem;
@@ -486,6 +583,7 @@
       color: var(--accent);
       margin-bottom: 6px;
     }
+
     .card-title {
       font-weight: 600;
       font-size: .9rem;
@@ -493,27 +591,31 @@
       line-height: 1.4;
     }
 
-    /* ─── VIDEO POPUP ─── */
+    /* ─── VIDEO POPUP (Dailymotion iframe) ─── */
     #videoPopup {
       display: none;
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(0,0,0,.95);
+      background: rgba(0, 0, 0, .95);
       backdrop-filter: blur(12px);
       align-items: center;
       justify-content: center;
     }
-    #videoPopup.open { display: flex; }
+
+    #videoPopup.open {
+      display: flex;
+    }
 
     .popup-inner {
       position: relative;
       width: min(90vw, 1000px);
-      animation: popIn .3s cubic-bezier(.34,1.56,.64,1);
+      animation: popIn .3s cubic-bezier(.34, 1.56, .64, 1);
     }
+
     @keyframes popIn {
-      from { opacity:0; transform: scale(.9); }
-      to   { opacity:1; transform: scale(1); }
+      from { opacity: 0; transform: scale(.9); }
+      to   { opacity: 1; transform: scale(1); }
     }
 
     .popup-close {
@@ -523,7 +625,6 @@
       background: none;
       border: none;
       color: var(--text);
-      font-size: 1.4rem;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -535,6 +636,7 @@
       transition: color .2s;
       padding: 0;
     }
+
     .popup-close:hover { color: var(--accent); }
     .popup-close i { font-size: 1.1rem; }
 
@@ -542,13 +644,28 @@
       background: #000;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 40px 80px rgba(0,0,0,.8);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, .8);
+      position: relative;
+      /* 16:9 aspect ratio container */
+      padding-top: 56.25%;
     }
-    .popup-video-wrap video {
+
+    /* portrait popup override */
+    .popup-video-wrap.portrait-wrap {
+      padding-top: 0;
+      height: 75vh;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .popup-video-wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      border: none;
       display: block;
-      max-height: 75vh;
-      background: #000;
     }
 
     .popup-info {
@@ -558,12 +675,14 @@
       justify-content: space-between;
       gap: 20px;
     }
+
     .popup-info-title {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.5rem;
       letter-spacing: 2px;
       color: var(--text);
     }
+
     .popup-info-meta {
       font-family: 'DM Mono', monospace;
       font-size: .7rem;
@@ -574,7 +693,10 @@
     }
 
     /* ─── TESTIMONIAL ─── */
-    #testimonial { background: var(--bg2); }
+    #testimonial {
+      background: var(--bg2);
+    }
+
     .testi-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -584,7 +706,11 @@
       overflow: hidden;
       transition: border-color .25s;
     }
-    .testi-card:hover { border-color: rgba(255,92,26,.4); }
+
+    .testi-card:hover {
+      border-color: rgba(255, 92, 26, .4);
+    }
+
     .testi-card::before {
       content: '"';
       position: absolute;
@@ -596,6 +722,7 @@
       color: var(--accent);
       opacity: .06;
     }
+
     .testi-text {
       font-size: .92rem;
       color: var(--muted);
@@ -603,12 +730,14 @@
       position: relative;
       z-index: 1;
     }
+
     .testi-author {
       display: flex;
       align-items: center;
       gap: 14px;
       margin-top: 24px;
     }
+
     .testi-avatar {
       width: 46px;
       height: 46px;
@@ -623,14 +752,25 @@
       color: var(--accent);
       flex-shrink: 0;
     }
-    .testi-name { font-weight: 700; font-size: .88rem; color: var(--text); }
-    .testi-role { font-size: .76rem; color: var(--muted); letter-spacing: 1px; }
+
+    .testi-name {
+      font-weight: 700;
+      font-size: .88rem;
+      color: var(--text);
+    }
+
+    .testi-role {
+      font-size: .76rem;
+      color: var(--muted);
+      letter-spacing: 1px;
+    }
 
     /* ─── CONTACT ─── */
     #contact {
       background: var(--bg);
       border-top: 1px solid var(--border);
     }
+
     .contact-headline {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(2.4rem, 6vw, 5rem);
@@ -638,7 +778,9 @@
       line-height: .95;
       color: var(--text);
     }
+
     .contact-headline .line-accent { color: var(--accent); }
+
     .contact-email {
       font-family: 'DM Mono', monospace;
       font-size: .85rem;
@@ -650,7 +792,11 @@
       display: inline-block;
       margin-top: 16px;
     }
-    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
+
+    .contact-email:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
 
     /* ─── FOOTER ─── */
     footer {
@@ -658,13 +804,22 @@
       border-top: 1px solid var(--border);
       padding: 48px 0 28px;
     }
+
     .footer-brand {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 2rem;
       letter-spacing: 4px;
       color: var(--accent);
     }
-    .footer-desc { color: var(--muted); font-size: .84rem; margin-top: 10px; max-width: 240px; line-height: 1.7; }
+
+    .footer-desc {
+      color: var(--muted);
+      font-size: .84rem;
+      margin-top: 10px;
+      max-width: 240px;
+      line-height: 1.7;
+    }
+
     .footer-links h6 {
       font-size: .7rem;
       font-weight: 700;
@@ -673,6 +828,7 @@
       color: var(--muted);
       margin-bottom: 20px;
     }
+
     .footer-links a {
       display: block;
       color: var(--text);
@@ -681,7 +837,9 @@
       text-decoration: none;
       transition: color .2s;
     }
+
     .footer-links a:hover { color: var(--accent); }
+
     .social-icons a {
       width: 40px;
       height: 40px;
@@ -697,7 +855,13 @@
       transition: all .2s;
       text-decoration: none;
     }
-    .social-icons a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    .social-icons a:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
     .footer-copy {
       color: var(--muted);
       font-family: 'DM Mono', monospace;
@@ -710,8 +874,16 @@
     }
 
     /* ─── SCROLL REVEAL ─── */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
@@ -721,583 +893,527 @@
       .popup-inner { width: 96vw; }
       .popup-close { top: -40px; }
     }
+
     @media (max-width: 500px) {
       .video-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">Sojib</a>
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto align-items-center gap-1">
-        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#advantage">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#myworks">Works</a></li>
-        <li class="nav-item"><a class="nav-link" href="#testimonial">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-2"><a class="btn btn-hire" href="#contact">Hire Me</a></li>
-      </ul>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Sojib</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-center gap-1">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#advantage">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#myworks">Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonial">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2"><a class="btn btn-hire" href="#contact">Hire Me</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg-text">MOTION</div>
-  <div class="container">
-    <div class="row align-items-center gy-4">
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-text">MOTION</div>
+    <div class="container">
+      <div class="row align-items-center gy-4">
 
-      <!-- LEFT: text -->
-      <div class="col-lg-6">
-        <div class="hero-content reveal">
-          <div class="hero-eyebrow">Available for Projects</div>
-          <div class="hero-title">
-            <span style="font-size:clamp(1.6rem,3.5vw,3.2rem);letter-spacing:4px;color:var(--muted);display:block;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:300;">Hi, I'm</span>
-            Riaz Uddain<br>
-            <span class="stroke">GRAPHICS</span><br>
-            <span class="accent-word">& MOTION</span>
+        <!-- LEFT: text -->
+        <div class="col-lg-6">
+          <div class="hero-content reveal">
+            <div class="hero-eyebrow">Available for Projects</div>
+            <div class="hero-title">
+              <span style="font-size:clamp(1.6rem,3.5vw,3.2rem);letter-spacing:4px;color:var(--muted);display:block;margin-bottom:4px;font-family:'DM Sans',sans-serif;font-weight:300;">Hi, I'm</span>
+              Riaz Uddain<br>
+              <span class="stroke">GRAPHICS</span><br>
+              <span class="accent-word">& MOTION</span>
+            </div>
+            <p class="hero-tagline">
+              I design bold visuals and bring them to life through motion —
+              from brand films and intros to full motion graphics campaigns.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#myworks" class="btn-cta-primary">
+                <i class="fas fa-play"></i> Watch My Reel
+              </a>
+              <a href="#contact" class="btn-cta-ghost">
+                <i class="fas fa-arrow-right"></i> Let's Talk
+              </a>
+            </div>
+            <div class="hero-stats">
+              <div>
+                <div class="hero-stat-num">05+</div>
+                <div class="hero-stat-label">Years Experience</div>
+              </div>
+              <div>
+                <div class="hero-stat-num">240+</div>
+                <div class="hero-stat-label">Projects Done</div>
+              </div>
+              <div>
+                <div class="hero-stat-num">50+</div>
+                <div class="hero-stat-label">Happy Clients</div>
+              </div>
+            </div>
           </div>
-          <p class="hero-tagline">
-            I design bold visuals and bring them to life through motion —
-            from brand films and intros to full motion graphics campaigns.
+        </div>
+
+        <!-- RIGHT: photo -->
+        <div class="col-lg-6 hero-photo-col reveal">
+          <div class="hero-photo-ring">
+            <img src="./images/1.jpg" alt="Sojib" />
+            <div class="hero-photo-badge">
+              <div class="badge-num">240+</div>
+              <div class="badge-label">Projects Done</div>
+            </div>
+            <div class="hero-photo-avail">
+              <span class="avail-dot"></span> Available
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="advantage">
+    <div class="container">
+      <div class="row gy-5 align-items-start">
+        <div class="col-lg-4 reveal">
+          <div class="eyebrow">What I Do</div>
+          <div class="section-title">MY<br>TOOLKIT</div>
+          <p class="section-desc mt-3">
+            A decade spent mastering the craft — from frame-by-frame motion to complex 3D compositing.
+            Every project gets the full spectrum.
           </p>
-          <div class="hero-cta-group">
-            <a href="#myworks" class="btn-cta-primary">
-              <i class="fas fa-play"></i> Watch My Reel
-            </a>
-            <a href="#contact" class="btn-cta-ghost">
-              <i class="fas fa-arrow-right"></i> Let's Talk
-            </a>
+        </div>
+        <div class="col-lg-8 reveal">
+          <div class="skill-item">
+            <div class="skill-name">After Effects</div>
+            <div class="skill-tags"><span class="skill-tag">Motion</span><span class="skill-tag">VFX</span></div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="96" style="width:0%"></div></div>
           </div>
-          <div class="hero-stats">
-            <div>
-              <div class="hero-stat-num">05+</div>
-              <div class="hero-stat-label">Years Experience</div>
-            </div>
-            <div>
-              <div class="hero-stat-num">240+</div>
-              <div class="hero-stat-label">Projects Done</div>
-            </div>
-            <div>
-              <div class="hero-stat-num">50+</div>
-              <div class="hero-stat-label">Happy Clients</div>
-            </div>
-
+          <div class="skill-item">
+            <div class="skill-name">Premiere Pro</div>
+            <div class="skill-tags"><span class="skill-tag">Edit</span><span class="skill-tag">Color</span></div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="90" style="width:0%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Animate CC</div>
+            <div class="skill-tags"><span class="skill-tag">Rigging</span><span class="skill-tag">Animation</span></div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="78" style="width:0%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Photoshop</div>
+            <div class="skill-tags"><span class="skill-tag">Photo</span><span class="skill-tag">Composite</span></div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="92" style="width:0%"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name">Illustrator</div>
+            <div class="skill-tags"><span class="skill-tag">Vector</span><span class="skill-tag">Brand</span></div>
+            <div class="skill-bar-wrap"><div class="skill-bar" data-width="85" style="width:0%"></div></div>
           </div>
         </div>
-      </div>
-
-      <!-- RIGHT: photo -->
-      <div class="col-lg-6 hero-photo-col reveal">
-        <div class="hero-photo-ring">
-          <!-- Replace src with your real photo, e.g. src="images/ronald.jpg" -->
-          <img src="./images/1.jpg" alt="Sojib"/>
-          <div class="hero-photo-badge">
-            <div class="badge-num">240+</div>
-            <div class="badge-label">Projects Done</div>
-          </div>
-          <div class="hero-photo-avail">
-            <span class="avail-dot"></span> Available
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="advantage">
-  <div class="container">
-    <div class="row gy-5 align-items-start">
-      <div class="col-lg-4 reveal">
-        <div class="eyebrow">What I Do</div>
-        <div class="section-title">MY<br>TOOLKIT</div>
-        <p class="section-desc mt-3">
-          A decade spent mastering the craft — from frame-by-frame motion to complex 3D compositing.
-          Every project gets the full spectrum.
-        </p>
-      </div>
-      <div class="col-lg-8 reveal">
-        <div class="skill-item">
-          <div class="skill-name">After Effects</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Motion</span>
-            <span class="skill-tag">VFX</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" data-width="96" style="width:0%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name">Premiere Pro</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Edit</span>
-            <span class="skill-tag">Color</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" data-width="90" style="width:0%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name">Animate CC</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Rigging</span>
-            <span class="skill-tag">Animation</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" data-width="78" style="width:0%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name">Photoshop</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Photo</span>
-            <span class="skill-tag">Composite</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" data-width="92" style="width:0%"></div>
-          </div>
-        </div>
-        <div class="skill-item">
-          <div class="skill-name">Illustrator</div>
-          <div class="skill-tags">
-            <span class="skill-tag">Vector</span>
-            <span class="skill-tag">Brand</span>
-          </div>
-          <div class="skill-bar-wrap">
-            <div class="skill-bar" data-width="85" style="width:0%"></div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- MY WORKS -->
-<section id="myworks">
-  <div class="container">
-    <div class="row align-items-end mb-5 reveal">
-      <div class="col-lg-7">
-        <div class="eyebrow">Portfolio</div>
-        <div class="section-title">SELECTED<br>WORKS</div>
-      </div>
-      <div class="col-lg-5">
-        <p class="section-desc" style="margin-left:auto">
-          Click any project to watch the full video.
-          Each piece is crafted with intention — sound, motion, and frame all working together.
-        </p>
-      </div>
-    </div>
-
-    <div class="works-filter reveal">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="motion">Motion Graphics</button>
-      <button class="filter-btn" data-filter="reel">Reels</button>
-    </div>
-
-    <!--
-      ══════════════════════════════════════════════════════
-      VIDEO CARDS — কিভাবে নিজের ভিডিও যোগ করবেন:
-      ──────────────────────────────────────────────────────
-      প্রতিটি card এ:
-        data-video="your-video.mp4"   → আপনার MP4 ফাইলের path
-        data-title="Title"            → popup এ দেখাবে
-        data-category="motion"        → filter এর জন্য
-
-      <img class="thumb" src="thumbnail.jpg" alt="...">
-        → ভিডিওর thumbnail image
-
-      Placeholder হিসেবে gradient boxes দেখাচ্ছে।
-      Real project এ thumb src এ thumbnail image দিন।
-      ══════════════════════════════════════════════════════
-    -->
-    <div class="video-grid reveal">
-
-      <!-- Card 1 — Wide -->
-      <div class="video-card"
-           data-video="./videos/1.mp4"
-           data-title="Motion Reel 2026"
-           data-meta="Motion Graphics · 2026"
-           data-category="motion">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80"
-             alt="Motion Reel 2024"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Motion Graphics</div>
-          <div class="card-title">Motion Reel 2026</div>
+  <!-- MY WORKS -->
+  <section id="myworks">
+    <div class="container">
+      <div class="row align-items-end mb-5 reveal">
+        <div class="col-lg-7">
+          <div class="eyebrow">Portfolio</div>
+          <div class="section-title">SELECTED<br>WORKS</div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="video-card"
-           data-video="videos/brand-film-nova.mp4"
-           data-title="Nova Brand Film"
-           data-meta="Brand Film · 2024"
-           data-category="brand">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-             alt="Nova Brand Film"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Brand Film</div>
-          <div class="card-title">Nova Brand Film</div>
-        </div>
-      </div>
-
-      <!-- Card 3 — Portrait (Reel) -->
-      <div class="video-card portrait"
-           data-video="videos/instagram-reel-01.mp4"
-           data-title="Instagram Reel – Product Drop"
-           data-meta="Reels · 2024"
-           data-category="reel">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80"
-             alt="Instagram Reel"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Reels</div>
-          <div class="card-title">Product Drop Reel</div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="video-card"
-           data-video="videos/3d-intro-nexus.mp4"
-           data-title="Nexus 3D Intro"
-           data-meta="3D Motion · 2023"
-           data-category="3d">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80"
-             alt="Nexus 3D Intro"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">3D Motion</div>
-          <div class="card-title">Nexus 3D Intro</div>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="video-card"
-           data-video="videos/lyric-video-echoes.mp4"
-           data-title="Echoes – Lyric Video"
-           data-meta="Lyric Video · 2023"
-           data-category="motion">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=800&q=80"
-             alt="Echoes Lyric Video"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Motion Graphics</div>
-          <div class="card-title">Echoes – Lyric Video</div>
-        </div>
-      </div>
-
-      <!-- Card 6 — Portrait (Reel) -->
-      <div class="video-card portrait"
-           data-video="videos/reel-fashion.mp4"
-           data-title="Fashion Brand Reel"
-           data-meta="Reels · 2024"
-           data-category="reel">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&q=80"
-             alt="Fashion Reel"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Reels</div>
-          <div class="card-title">Fashion Brand Reel</div>
-        </div>
-      </div>
-
-      <!-- Card 7 -->
-      <div class="video-card"
-           data-video="videos/explainer-fintech.mp4"
-           data-title="FinTech Explainer"
-           data-meta="Explainer · 2023"
-           data-category="motion">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
-             alt="FinTech Explainer"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">Explainer Film</div>
-          <div class="card-title">FinTech Explainer</div>
-        </div>
-      </div>
-
-      <!-- Card 8 -->
-      <div class="video-card"
-           data-video="videos/title-sequence.mp4"
-           data-title="Cinematic Title Sequence"
-           data-meta="Title Design · 2024"
-           data-category="3d">
-        <img class="thumb"
-             src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&q=80"
-             alt="Title Sequence"/>
-        <div class="card-overlay">
-          <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
-          <div class="card-meta">3D / Title</div>
-          <div class="card-title">Cinematic Title Sequence</div>
-        </div>
-      </div>
-
-    </div><!-- /video-grid -->
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonial">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="eyebrow" style="justify-content:center">Client Reviews</div>
-      <div class="section-title">WHAT THEY SAY</div>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="testi-card">
-          <p class="testi-text">
-            Sojib's motion work completely transformed our brand launch. The intro video alone got over 800K views in the first week. Pure cinematic magic.
+        <div class="col-lg-5">
+          <p class="section-desc" style="margin-left:auto">
+            Click any project to watch the full video.
+            Each piece is crafted with intention — sound, motion, and frame all working together.
           </p>
-          <div class="testi-author">
-            <div class="testi-avatar">AK</div>
-            <div>
-              <div class="testi-name">Arif Karim</div>
-              <div class="testi-role">CEO, Nexus Digital</div>
+        </div>
+      </div>
+
+      <div class="works-filter reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <!-- <button class="filter-btn" data-filter="motion">Motion Graphics</button>
+        <button class="filter-btn" data-filter="reel">Reels</button> -->
+      </div>
+
+      <!--
+        ══════════════════════════════════════════════════════
+        VIDEO CARDS — Dailymotion Embed System
+        ──────────────────────────────────────────────────────
+        data-dmid="xaej1e6"   → Dailymotion video ID (dai.ly/xaej1e6 এর শেষ অংশ)
+        data-portrait="true"  → Portrait video হলে যোগ করুন
+        ══════════════════════════════════════════════════════
+      -->
+      <div class="video-grid reveal">
+
+        <!-- Card 1 — Motion Reel 2026 | https://dai.ly/xaej1e6 -->
+        <div class="video-card"
+          data-dmid="xaej1e6"
+          data-title="Motion Reel 2026"
+          data-meta="Motion Graphics · 2026"
+          data-category="motion">
+          <img class="thumb" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80" alt="Motion Reel 2026" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">Motion Graphics</div>
+            <div class="card-title">Motion Reel 2026</div>
+          </div>
+        </div>
+
+        <!-- Card 2 | https://dai.ly/xaej1ei -->
+        <div class="video-card"
+          data-dmid="xaej1ei"
+          data-title="Nova Brand Film"
+          data-meta="Brand Film · 2024"
+          data-category="brand">
+          <img class="thumb" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Nova Brand Film" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">Brand Film</div>
+            <div class="card-title">Nova Brand Film</div>
+          </div>
+        </div>
+
+        <!-- Card 3 — Portrait | https://dai.ly/xaej1ee -->
+        <div class="video-card"
+          data-dmid="xaej1ee"
+          data-portrait="true"
+          data-title="Product Drop Reel"
+          data-meta="Reels · 2024"
+          data-category="reel">
+          <img class="thumb" src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80" alt="Product Drop Reel" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">Reels</div>
+            <div class="card-title">Product Drop Reel</div>
+          </div>
+        </div>
+
+        <!-- Card 4 | https://dai.ly/xaej1em -->
+        <div class="video-card"
+          data-dmid="xaej1em"
+          data-title="Nexus 3D Intro"
+          data-meta="3D Motion · 2023"
+          data-category="3d">
+          <img class="thumb" src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=80" alt="Nexus 3D Intro" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">3D Motion</div>
+            <div class="card-title">Nexus 3D Intro</div>
+          </div>
+        </div>
+
+        <!-- Card 5 | https://dai.ly/xaej1dy -->
+        <div class="video-card"
+          data-dmid="xaej1dy"
+          data-title="Echoes – Lyric Video"
+          data-meta="Lyric Video · 2023"
+          data-category="motion">
+          <img class="thumb" src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=800&q=80" alt="Echoes Lyric Video" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">Motion Graphics</div>
+            <div class="card-title">Echoes – Lyric Video</div>
+          </div>
+        </div>
+
+        <!-- Card 6 — Portrait | https://dai.ly/xaej1e2 -->
+        <div class="video-card"
+          data-dmid="xaej1e2"
+          data-portrait="true"
+          data-title="Fashion Brand Reel"
+          data-meta="Reels · 2024"
+          data-category="reel">
+          <img class="thumb" src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=500&q=80" alt="Fashion Reel" />
+          <div class="card-overlay">
+            <div class="card-play"><i class="fas fa-play" style="margin-left:3px"></i></div>
+            <div class="card-meta">Reels</div>
+            <div class="card-title">Fashion Brand Reel</div>
+          </div>
+        </div>
+
+      </div><!-- /video-grid -->
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonial">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <div class="eyebrow" style="justify-content:center">Client Reviews</div>
+        <div class="section-title">WHAT THEY SAY</div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testi-card">
+            <p class="testi-text">
+              Sojib's motion work completely transformed our brand launch. The intro video alone got over 800K views in
+              the first week. Pure cinematic magic.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">AK</div>
+              <div>
+                <div class="testi-name">Arif Karim</div>
+                <div class="testi-role">CEO, Nexus Digital</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testi-card">
+            <p class="testi-text">
+              The explainer video he made for our app increased sign-ups by 38%. He understood the product better than
+              most of our own team members did.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">SM</div>
+              <div>
+                <div class="testi-name">Sara Müller</div>
+                <div class="testi-role">Product Lead, Payflow</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="testi-card">
+            <p class="testi-text">
+              Incredibly professional. Delivered the full reel package on time, every revision was handled with zero
+              drama. Will absolutely work with him again.
+            </p>
+            <div class="testi-author">
+              <div class="testi-avatar">JT</div>
+              <div>
+                <div class="testi-name">James Torres</div>
+                <div class="testi-role">Creative Director, Ember Studio</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="testi-card">
-          <p class="testi-text">
-            The explainer video he made for our app increased sign-ups by 38%. He understood the product better than most of our own team members did.
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-7 reveal">
+          <div class="eyebrow">Let's Work</div>
+          <div class="contact-headline">
+            GOT A<br>
+            <span class="line-accent">PROJECT</span><br>
+            IN MIND?
+          </div>
+          <a href="mailto:sojibbiawas1999@gmail.com" class="contact-email">sojibbiawas1999@gmail.com</a>
+        </div>
+        <div class="col-lg-5 reveal">
+          <p style="color:var(--muted);font-size:.9rem;line-height:1.9;margin-bottom:28px">
+            Open to brand films, motion graphics, social content, title sequences, and long-term creative partnerships.
           </p>
-          <div class="testi-author">
-            <div class="testi-avatar">SM</div>
-            <div>
-              <div class="testi-name">Sara Müller</div>
-              <div class="testi-role">Product Lead, Payflow</div>
-            </div>
-          </div>
+          <a href="mailto:sojibbiawas1999@gmail.com" class="btn-cta-primary">
+            <i class="fas fa-envelope"></i> Send a Message
+          </a>
         </div>
       </div>
-      <div class="col-md-6 col-lg-4 reveal">
-        <div class="testi-card">
-          <p class="testi-text">
-            Incredibly professional. Delivered the full reel package on time, every revision was handled with zero drama. Will absolutely work with him again.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">ELITO</div>
+          <p class="footer-desc">Graphics & Motion Designer crafting bold visuals since 2016.</p>
+          <div class="social-icons mt-4">
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 footer-links">
+          <h6>Navigate</h6>
+          <a href="#hero">Home</a>
+          <a href="#advantage">Skills</a>
+          <a href="#myworks">Works</a>
+          <a href="#testimonial">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2 footer-links">
+          <h6>Services</h6>
+          <a href="#">Motion Graphics</a>
+          <a href="#">Brand Films</a>
+          <a href="#">3D Animation</a>
+          <a href="#">Social Reels</a>
+          <a href="#">Color Grading</a>
+        </div>
+        <div class="col-md-6 col-lg-4 footer-links">
+          <h6>Quick Contact</h6>
+          <p style="color:var(--muted);font-size:.84rem;margin-bottom:16px;line-height:1.7">
+            Have a brief ready? Drop it straight to inbox.
           </p>
-          <div class="testi-author">
-            <div class="testi-avatar">JT</div>
-            <div>
-              <div class="testi-name">James Torres</div>
-              <div class="testi-role">Creative Director, Ember Studio</div>
-            </div>
+          <div class="input-group">
+            <input type="email" class="form-control" placeholder="your@email.com"
+              style="background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:4px 0 0 4px;font-size:.84rem" />
+            <button class="btn"
+              style="background:var(--accent);color:#fff;font-weight:700;border-radius:0 4px 4px 0;font-size:.8rem;padding:0 18px;letter-spacing:1px;text-transform:uppercase;">
+              Go
+            </button>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <div class="row align-items-center gy-5">
-      <div class="col-lg-7 reveal">
-        <div class="eyebrow">Let's Work</div>
-        <div class="contact-headline">
-          GOT A<br>
-          <span class="line-accent">PROJECT</span><br>
-          IN MIND?
-        </div>
-        <a href="sojibbiawas1999@gmail.com" class="contact-email">Sojib@elito.design</a>
-      </div>
-      <div class="col-lg-5 reveal">
-        <p style="color:var(--muted);font-size:.9rem;line-height:1.9;margin-bottom:28px">
-          Open to brand films, motion graphics, social content, title sequences, and long-term creative partnerships.
-        </p>
-        <a href="sojibbiawas1999@gmail.com" class="btn-cta-primary">
-          <i class="fas fa-envelope"></i> Send a Message
-        </a>
+      <div class="footer-copy">
+        © 2026 SOJIB. All Rights Reserved.
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-4">
-        <div class="footer-brand">ELITO</div>
-        <p class="footer-desc">Graphics & Motion Designer crafting bold visuals since 2016.</p>
-        <div class="social-icons mt-4">
-          <a href="#"><i class="fab fa-dribbble"></i></a>
-          <a href="#"><i class="fab fa-behance"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
+  <!-- ══════ VIDEO POPUP — Dailymotion iframe ══════ -->
+  <div id="videoPopup" role="dialog" aria-modal="true">
+    <div class="popup-inner">
+      <button class="popup-close" id="popupCloseBtn">
+        <i class="fas fa-times"></i> Close
+      </button>
+      <div class="popup-video-wrap" id="popupVideoWrap">
+        <!-- iframe dynamically injected here -->
       </div>
-      <div class="col-6 col-md-3 col-lg-2 footer-links">
-        <h6>Navigate</h6>
-        <a href="#hero">Home</a>
-        <a href="#advantage">Skills</a>
-        <a href="#myworks">Works</a>
-        <a href="#testimonial">Reviews</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="col-6 col-md-3 col-lg-2 footer-links">
-        <h6>Services</h6>
-        <a href="#">Motion Graphics</a>
-        <a href="#">Brand Films</a>
-        <a href="#">3D Animation</a>
-        <a href="#">Social Reels</a>
-        <a href="#">Color Grading</a>
-      </div>
-      <div class="col-md-6 col-lg-4 footer-links">
-        <h6>Quick Contact</h6>
-        <p style="color:var(--muted);font-size:.84rem;margin-bottom:16px;line-height:1.7">
-          Have a brief ready? Drop it straight to inbox.
-        </p>
-        <div class="input-group">
-          <input type="email" class="form-control"
-            placeholder="your@email.com"
-            style="background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:4px 0 0 4px;font-size:.84rem"/>
-          <button class="btn"
-            style="background:var(--accent);color:#fff;font-weight:700;border-radius:0 4px 4px 0;font-size:.8rem;padding:0 18px;letter-spacing:1px;text-transform:uppercase;">
-            Go
-          </button>
+      <div class="popup-info">
+        <div>
+          <div class="popup-info-title" id="popupTitle">—</div>
+          <div class="popup-info-meta" id="popupMeta">—</div>
         </div>
       </div>
     </div>
-    <div class="footer-copy">
-      © 2026 SOJIB. All Rights Reserved.
-    </div>
   </div>
-</footer>
 
-<!-- ══════ VIDEO POPUP ══════ -->
-<div id="videoPopup" role="dialog" aria-modal="true">
-  <div class="popup-inner">
-    <button class="popup-close" id="popupCloseBtn">
-      <i class="fas fa-times"></i> Close
-    </button>
-    <div class="popup-video-wrap">
-      <video id="popupVideo" controls preload="none">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-    <div class="popup-info">
-      <div>
-        <div class="popup-info-title" id="popupTitle">—</div>
-        <div class="popup-info-meta" id="popupMeta">—</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  /* ── SCROLL REVEAL ── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        revObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => revObs.observe(el));
-
-  /* ── SKILL BAR ANIMATE ── */
-  const barEls = document.querySelectorAll('.skill-bar');
-  const barObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.width = e.target.dataset.width + '%';
-        barObs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.3 });
-  barEls.forEach(el => barObs.observe(el));
-
-  /* ── VIDEO FILTER ── */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const videoCards = document.querySelectorAll('.video-card');
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      videoCards.forEach(card => {
-        const cat = card.dataset.category;
-        if (filter === 'all' || cat === filter) {
-          card.style.display = '';
-          card.style.animation = 'fadeIn .35s ease forwards';
-        } else {
-          card.style.display = 'none';
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    /* ── SCROLL REVEAL ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revObs.unobserve(e.target);
         }
       });
+    }, { threshold: 0.1 });
+    revealEls.forEach(el => revObs.observe(el));
+
+    /* ── SKILL BAR ANIMATE ── */
+    const barEls = document.querySelectorAll('.skill-bar');
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.dataset.width + '%';
+          barObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    barEls.forEach(el => barObs.observe(el));
+
+    /* ── VIDEO FILTER ── */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const videoCards = document.querySelectorAll('.video-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        videoCards.forEach(card => {
+          const cat = card.dataset.category;
+          if (filter === 'all' || cat === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
     });
-  });
 
-  /* ── VIDEO POPUP ── */
-  const popup      = document.getElementById('videoPopup');
-  const popupVideo = document.getElementById('popupVideo');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupMeta  = document.getElementById('popupMeta');
-  const closeBtn   = document.getElementById('popupCloseBtn');
+    /* ── VIDEO POPUP — Dailymotion iframe ── */
+    const popup        = document.getElementById('videoPopup');
+    const popupWrap    = document.getElementById('popupVideoWrap');
+    const popupTitle   = document.getElementById('popupTitle');
+    const popupMeta    = document.getElementById('popupMeta');
+    const closeBtn     = document.getElementById('popupCloseBtn');
 
-  function openPopup(videoSrc, title, meta) {
-    popupTitle.textContent = title;
-    popupMeta.textContent  = meta;
-    popupVideo.src         = videoSrc;
-    popup.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    popupVideo.focus();
-  }
+    function openPopup(dmId, title, meta, isPortrait) {
+      popupTitle.textContent = title;
+      popupMeta.textContent  = meta;
 
-  function closePopup() {
-    popup.classList.remove('open');
-    popupVideo.pause();
-    popupVideo.src = '';          // ← video পুরো stop + memory release
-    document.body.style.overflow = '';
-  }
+      // Portrait vs landscape wrapper
+      if (isPortrait) {
+        popupWrap.classList.add('portrait-wrap');
+      } else {
+        popupWrap.classList.remove('portrait-wrap');
+      }
 
-  // Card click → open popup
-  videoCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const src   = card.dataset.video;
-      const title = card.dataset.title;
-      const meta  = card.dataset.meta;
-      openPopup(src, title, meta);
+      // Build Dailymotion embed URL
+      // autoplay=1 so video starts immediately on click
+      const embedUrl = `https://www.dailymotion.com/embed/video/${dmId}?autoplay=1&mute=0&ui-logo=0`;
+
+      // Inject iframe
+      popupWrap.innerHTML = `<iframe
+        src="${embedUrl}"
+        allowfullscreen
+        allow="autoplay; fullscreen"
+        frameborder="0"
+        title="${title}">
+      </iframe>`;
+
+      popup.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePopup() {
+      popup.classList.remove('open');
+      // Remove iframe completely → stops video & releases memory
+      popupWrap.innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    // Card click → open popup
+    videoCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const dmId      = card.dataset.dmid;
+        const title     = card.dataset.title;
+        const meta      = card.dataset.meta;
+        const portrait  = card.dataset.portrait === 'true';
+        if (!dmId) return;
+        openPopup(dmId, title, meta, portrait);
+      });
     });
-  });
 
-  // Close button
-  closeBtn.addEventListener('click', closePopup);
+    // Close button
+    closeBtn.addEventListener('click', closePopup);
 
-  // Click outside popup-inner → close
-  popup.addEventListener('click', (e) => {
-    if (e.target === popup) closePopup();
-  });
+    // Click outside popup-inner → close
+    popup.addEventListener('click', (e) => {
+      if (e.target === popup) closePopup();
+    });
 
-  // ESC key → close
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && popup.classList.contains('open')) closePopup();
-  });
-</script>
+    // ESC key → close
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && popup.classList.contains('open')) closePopup();
+    });
+  </script>
 </body>
 </html>
